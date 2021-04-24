@@ -1,4 +1,4 @@
-#include "lib.h"
+#include "Game.h"
 
 int main(){
 	initscr();
