@@ -8,25 +8,16 @@ public:
 	int action_points = 3;
 	int initiative = 3;
 	int position = 0;
-	int current_pos(){
-		return this->position;
+	Unite* stats_ = new Unite;
+	Easy_enemy(){
+		stats_->health = 60;
+		stats_->action_points = 3;
+		stats_->initiative = 8;
+		stats_->position = 0;
 	}
-	Easy_enemy() = default;
 	int max_health() {
 		return 50;
 	}
-	int  current_hp(){
-                return this->health;
-        }
-	int  current_act_points(){
-                return this->action_points;
-        }
-	void decrease_hp(int damage){
-                this->health -= damage;
-        }
-        void decrease_act_points(int damage_points){
-                this->action_points -= damage_points;
-        }
 	void common_hit(Unite& u) {
 		if (this->action_points < 1 || u.is_dead()) {
 			printw("NO!\n");
@@ -34,12 +25,6 @@ public:
 		}
 		u.decrease_hp(10);
 		this->action_points--;
-	}
-	bool is_dead() {
-		if (this->health <= 0) {
-			return true;
-		}
-		return false;
 	}
 	~Easy_enemy() = default;
 };
@@ -50,25 +35,16 @@ public:
 	int action_points = 3;
 	int initiative = 5;
 	int position = 0;
-        int current_pos(){
-                return this->position;
-        }
-	Medium_enemy() = default;
+	Unite* stats_ = new Unite;
+	Medium_enemy(){
+		stats_->health = 60;
+		stats_->action_points = 3;
+		stats_->initiative = 8;
+		stats_->position = 0;
+	}
 	int max_health() {
 		return 70;
 	}
-	int  current_hp(){
-                return this->health;
-        }
-	int  current_act_points(){
-                return this->action_points;
-        }
-	void decrease_hp(int damage){
-                this->health -= damage;
-        }
-        void decrease_act_points(int damage_points){
-                this->action_points -= damage_points;
-        }
 	void common_hit(Unite& u) {
 		if (this->action_points < 1 || u.is_dead()) {
 			printw("NO!\n");
@@ -76,12 +52,6 @@ public:
 		}
 		u.decrease_hp(15);
 		this->action_points--;
-	}
-	bool is_dead() {
-		if (this->health <= 0) {
-			return true;
-		}
-		return false;
 	}
 	~Medium_enemy() = default;
 };
@@ -92,25 +62,16 @@ public:
 	int action_points = 4;
 	int initiative = 7;
 	int position = 0;
-        int current_pos(){
-                return this->position;
-        }
-	Hard_enemy() = default;
+	Unite* stats_ = new Unite;
+	Hard_enemy(){
+		stats_->health = 60;
+		stats_->action_points = 3;
+		stats_->initiative = 8;
+		stats_->position = 0;
+	}
 	int max_health() {
 		return 80;
 	}
-	int  current_hp(){
-                return this->health;
-        }
-	int  current_act_points(){
-                return this->action_points;
-        }
-	void decrease_hp(int damage){
-                this->health -= damage;
-        }
-        void decrease_act_points(int damage_points){
-                this->action_points -= damage_points;
-        }
 	void common_hit(Unite& u) {
 		if (this->action_points < 1 || u.is_dead()) {
 			printw("NO!\n");
@@ -118,12 +79,6 @@ public:
 		}
 		u.decrease_hp(20);
 		this->action_points--;
-	}
-	bool is_dead() {
-		if (this->health <= 0) {
-			return true;
-		}
-		return false;
 	}
 	~Hard_enemy() = default;
 };
